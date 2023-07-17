@@ -1,0 +1,11 @@
+/*coloquei header.module.css para que fique atrelado apenas ao Header e nao interfira em outros */
+.header {
+    background: var(--gray-800);
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem 0;
+} /*só foram importados quando coloquei um classname em Header.jsx;*/
+
+.header img {
+    height: 2rem; 
+}
