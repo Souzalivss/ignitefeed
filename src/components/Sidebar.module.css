@@ -19,7 +19,7 @@
 }
 
 .profile img {
-    box-sizing: initial; /*isso ocupa um espaço a mais e nao expreme meu container*/
+    box-sizing: initial;
     width: 3rem;
     height: 3rem;
     border-bottom: 8px;
