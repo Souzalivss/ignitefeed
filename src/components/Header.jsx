@@ -1,5 +1,3 @@
-//cabeçalho
-
 import styles from './Header.module.css' ; //styles pq é a estilização que eu quero
 import IgniteLogo from '../assets/ignite-logo.svg';
 
