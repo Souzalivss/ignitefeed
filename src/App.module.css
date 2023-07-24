@@ -10,6 +10,10 @@
 }
 
 @media (max-width: 768px) {
+html {
+    font-size: 87.5%; /*fiz regra de tres de 16px para 100% e 14px para x */
+}
+
     .wrapper{
         grid-template-columns: 1fr;
     }
