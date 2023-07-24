@@ -26,9 +26,9 @@ const posts = [
     {
       id: 2,
       author: {
-        avatarUrl: 'https://github.com/Souzalivss',
-        name: 'Lívia souza',
-        role: 'Desenvolvedora',
+        avatarUrl: 'https://avatars.githubusercontent.com/u/103189479?v=4',
+        name: 'Leandro viera',
+        role: 'Desenvolvedor',
       },
       content: [
         { type: 'paragraph', content: 'Fala galeraa 👋'},
