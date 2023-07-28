@@ -10,7 +10,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrl: 'https://github.com/Souzalivss',
+      avatarUrl: 'https://github.com/Souzalivss.png',
       name: 'Lívia souza',
       role: 'Desenvolvedora',
     },
@@ -21,7 +21,7 @@ const posts = [
       
       { type: 'link', content: 'jane.design/doctorcare'},
             ],
-            publshedAt: new Date('2023-07-24 13:00:00'),
+            publishedAt: new Date('2023-07-24 13:00:00'),
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const posts = [
         
         { type: 'link', content: 'jane.design/doctorcare'},
               ],
-              publshedAt: new Date('2023-07-24 13:00:00'),
+              publishedAt: new Date('2023-07-24 13:00:00'),
       },
 ];
 
@@ -55,7 +55,7 @@ export function App() {
             <Post 
             author={post.author}
             content={post.content}
-            publshedAt={post.publshedAt}
+            publishedAt={post.publishedAt}
             />)
           })}
         </main>
