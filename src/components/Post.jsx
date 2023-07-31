@@ -12,9 +12,10 @@ export function Post({ author, publishedAt, content }) {
 
     //o use state retorna um array com duas posições
     const [comments, setComments] = useState([
-        1,
-        2,
+        'post muito legal, hein!'
     ])
+
+    const [newCommentText, setNewCommentText] = useState('')
 
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
@@ -26,11 +27,19 @@ export function Post({ author, publishedAt, content }) {
   }) //qual é a distancia do ddia do post ate agora
   
 function handleCreateNewComment() {
-event.preventDefault();
-//imutabiliidade:
-setComments([...comments, comments.length + 1]);  //add comentarios
+event.preventDefault()
+
+setComments([...comments, newCommentText]);  //add comentarios que escrevo 
+setNewCommentText('');
 }
 
+function handleNewCommentChange(){
+    setNewCommentText(event.target.value)
+}
+
+function deleteComment(comment) {
+    console.log(`deletar comentário ${comment}`)
+}
   return (
 <article className={styles.post}>
         <header>
@@ -50,19 +59,22 @@ setComments([...comments, comments.length + 1]);  //add comentarios
         <div className={styles.content}>
             {content.map(line => {
                 if (line.type == 'paragraph') {
-                    return <p>{line.content}</p>;
+                    return <p key={line.content}>{line.content}</p>;
                 } else if (line.type == 'link') {
-                    return <p><a href="#">{line.content}</a></p>
+                    return <p key={line.content}><a href="#">{line.content}</a></p>
                 }
             })}
         </div>
 
 <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
     <strong>Deixe seu feedback</strong>
-    <textarea
-    placeholder="deixe um comentário"
-     />
-     
+   
+   <textarea 
+   name='comment'
+   placeholder="deixe um comentário"
+   value={newCommentText}
+   onChange={handleNewCommentChange}
+   />
 <footer>
 <button type="submit">Publicar</button>
 </footer>
@@ -70,7 +82,13 @@ setComments([...comments, comments.length + 1]);  //add comentarios
 </form>
         <div className={styles.commentList}>
             {comments.map(comment => {
-                return <Comment />
+                return (
+                    <Comment 
+                        key={comment} 
+                        content={comment} 
+                        ondeleteComment={deleteComment} 
+                    /> 
+                        )
             })}
         </div>
 </article>   
